@@ -4,6 +4,12 @@
     if($.support.touch){
       $('html').addClass('touch');
     }
+	
+	//fix for phonegap 0.9.5+ 
+	$(document).bind("orientationchange", function(event){	
+		$(window).trigger(event);	
+	});
+	
     if ($.mobile.media("screen and (min-width:480px)")||($.mobile.browser.ie && $(this).width() >= 480)) {
       $('html').addClass('splitview');
       $(function() {
